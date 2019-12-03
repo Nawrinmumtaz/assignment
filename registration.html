@@ -1,0 +1,175 @@
+<html>
+<head>
+</head>
+<body>
+<script>
+function myFun()
+{ var a=document.getElementById("name").value;
+//var d =document.getElementById("email").value;
+var b=document.getElementById("password").value;
+var c =document.getElementById("passwords").value;
+
+
+if(a==""||a==null)
+{document.getElementById("msg").innerHTML="Please fill username";
+return false;
+}
+if(a.length<2)
+{document.getElementById("msg").innerHTML="username must be atleast 2 character";
+return false;}
+/*if(a.charAt(0)!='A'||a.charAt(0)!='B'){document.getElementById("msg").innerHTML=" must start with letter";
+return false;}*/
+/*if(d=="")
+{document.getElementById("msge").innerHTML="Please fill email";
+return false;
+}*/
+
+if(b=="")
+{document.getElementById("msgp").innerHTML="**PLEASE FILL PASSWORD";
+return false;}
+if(b!=c)
+{document.getElementById("msgcp").innerHTML="PASSWORDS ARE NOT SAME";
+return false;}
+
+
+}
+
+function gender(){
+
+
+var d =document.getElementById("gender").value;
+for(i=0;i<d.length;i++)
+{
+
+if(d[i].checked==true)
+return true;
+
+
+}
+document.getElementById("msgg").innerHTML="Please select anyone";
+return false;}
+function sayHello(){
+
+document.getElementById("msge").innerHTML=" hint:sample@example.com";
+}
+function sayBye(){
+
+document.getElementById("msge").innerHTML="";}
+</script>
+
+<fieldset>
+    <legend><b>REGISTRATION</b></legend>
+	<form onsubmit="return myFun()">
+		<br/>
+		<table width="100%" cellpadding="0" cellspacing="0">
+			<tr>
+				<td>Name</td>
+				<td>:</td>
+				<td><input name="name" type="text" id="name"><p id="msg"></p></td>
+				<td></td>
+			</tr>		
+			<tr><td colspan="4"><hr/></td></tr>
+			<tr>
+				<td>Email</td>
+				<td>:</td>
+				<td>
+					<input name="email" type="text" ><button onclick = "sayHello()" onmouseleave="sayBye()" ><b>i</b></button><p id="msge">
+				
+				</td>
+				<td></td>
+			</tr>		
+	
+			<tr><td colspan="4"><hr/></td></tr>
+			<tr>
+				<td>Password</td>
+				<td>:</td>
+				<td><input name="password" type="password" id="password"><p id="msgp"></td>
+				<td></td>
+			</tr>		
+			<tr><td colspan="4"><hr/></td></tr>
+			<tr>
+				<td>Confirm Password</td>
+				<td>:</td>
+				<td><input name="confirmPassword" type="password" id="passwords"><p id="msgcp"></td>
+				<td></td>
+			</tr>		
+			<tr><td colspan="4"><hr/></td></tr>
+			<tr>
+				<td colspan="3">
+					<fieldset>
+						<legend>Gender</legend>    
+						<input name="gender" type="radio">Male
+						<input name="gender" type="radio">Female
+						<input name="gender" type="radio">Other
+						<p id="msgg">
+					</fieldset>
+				</td>
+				<td></td>
+			</tr>		
+			<tr><td colspan="4"><hr/></td></tr>
+			<tr>
+				<td colspan="3">
+					<fieldset>
+						<legend>Date of Birth</legend>    
+						<input type="text" size="2" name="dob"/>/
+						<input type="text" size="2" name="dob" />/
+						<input type="text" size="4" name="dob"/>
+						<font size="2"><i>(dd/mm/yyyy)</i><p id="msgdob"></font>
+					</fieldset>
+				</td>
+				<td></td>
+			</tr>
+			<tr><td colspan="4"><hr/></td></tr>
+				<tr>
+				<td colspan="3">
+					<fieldset>
+						<legend>Degree</legend> 
+			<input type="checkbox" name="vehicle1" value="Bike">SSC<br>
+<input type="checkbox" name="vehicle2" value="Car"> HSC<br>
+<input type="checkbox" name="vehicle3" value="Boat" checked> BSC<br>
+				</fieldset>
+				</td>
+				<td></td>
+			</tr>
+			<tr><td colspan="4"><hr/></td></tr>
+				<tr>
+				<td colspan="3">
+			
+			<fieldset>
+						<legend>Blood Group</legend> 
+<select>						
+  <option value="volvo">A+</option>
+  <option value="saab">B+</option>
+  <option value="mercedes">A-</option>
+  <option value="audi">B-</option>
+  
+</select>
+	</fieldset>
+	</td>
+				<td></td>
+			</tr>
+			
+						<tr><td colspan="4"><hr/></td></tr>
+				<tr>
+				<td colspan="3">
+			
+			<fieldset>
+						<legend>Profile Picture</legend> 
+Name
+				<input name="name" type="text" id="name"><p id="msg"></p><br>
+				Picture 
+				<td></td>
+  
+</select>
+	</fieldset>
+	</td>
+				<td></td>
+			</tr>
+		</table>
+		<hr/>
+		<input type="submit" value="Submit">
+		<input type="reset">
+	</form>
+</fieldset>
+</body>
+</html>
